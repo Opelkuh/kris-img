@@ -28,7 +28,7 @@ var storage = multer.diskStorage({
 });
 var upload = multer({
     storage: storage
-}).array("files");
+}).any();
 //Express router
 const router = express.Router();
 
