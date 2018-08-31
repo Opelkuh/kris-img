@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=10.5.0"
+  },
   "scripts": {
     "start": "PORT=4001 REDIRECT_PATH=127.0.0.1/ node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +22,8 @@
   "homepage": "https://github.com/Opelkuh/kris-img#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "file-type": "^8.0.0",
+    "mmmagic": "^0.5.1",
+    "mongojs": "^2.6.0",
     "multer": "^1.3.0",
     "pug": "^2.0.3",
     "shortid": "^2.2.8"

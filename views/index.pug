@@ -1,0 +1,33 @@
+doctype html  
+html(lang='en')  
+	head
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel='stylesheet' href='/static/css/materialize.min.css')
+		link(rel='stylesheet' href='/static/css/mod.css')
+		script(src='/static/js/materialize.min.js')
+	body
+		main.container
+			.row
+				.col.s12
+					h3 Upload
+				.col.s12
+					form(action="/api/v1/upload" method="post" enctype="multipart/form-data" )
+						.file-field.input-field
+							.btn
+								span Select File
+								input(type="file" name="files" multiple)
+							.file-path-wrapper
+								input.file-path.validate(type="text" placeholder="Upload one or more files")
+							input.btn#uploadBtn(type="submit" value="Upload file" width="100%")
+			.row
+				.col.s12
+					h3 New ID
+					form.col.s12
+						.input-field.col.s12.m5
+							input#id.validate(type="text" name="id" required pattern="^[a-zA-Z0-9]+$" maxlength="25")
+							label(for="id") ID
+						.input-field.col.s12.m5
+							input#password.validate(type="password" name="password" required maxlength="32")
+							label(for="password") Password
+						.input-field.col.s12.m2
+							input.btn(type="submit" value="Save")
